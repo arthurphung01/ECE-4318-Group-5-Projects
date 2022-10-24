@@ -1,1 +1,2 @@
-This is Group 5's submission for project 3.
+This is a repository of Group 5's code for Project 3.
+
