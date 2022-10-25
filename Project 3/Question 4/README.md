@@ -31,4 +31,5 @@ Cos graph
 ![cos plot with b parameter changed to -5](https://github.com/arthurphung01/ECE-4318-Group-5-Projects/blob/main/Project%203/Question%204/Images/cos%20new%20parameters.png)
 
 Sin and Cos plotted together
+
 ![Sin and Cos plotted together](https://github.com/arthurphung01/ECE-4318-Group-5-Projects/blob/main/Project%203/Question%204/Images/sin%20and%20cos%20with%20new%20parameters.png)
