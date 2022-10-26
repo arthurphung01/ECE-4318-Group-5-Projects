@@ -1,10 +1,3 @@
-"""
-part a
-
-compute 50! 100! and 2^63 - 1
-"""
-
-#computing factorial
 def fact():
     n = ''
 
@@ -20,7 +13,6 @@ def fact():
         print(f"The factorial of {n} is {fact}")
         return main()
 
-#computing exponential
 def expo():
     n = ''
 
@@ -33,16 +25,123 @@ def expo():
         print(f"{b}^{n} - 1 = {expo}")
         return main()
 
+
+def greaterThan():
+    a = ''
+    b = ''
+    while (a != 0 and b != 0):
+        int1 = input("Input a value for a: ")
+        int2 = input("Input a value for b: ")
+
+        a = int(int1)
+        b = int(int2)
+
+        if (a > b):
+            print(f"{a} is greater than {b}")
+        if (a < b):
+            print(f"{a} is less than {b}")
+        else:
+            print("{a} = {b}")
+        return main()
+
+
+def add():
+    a = ''
+    b = ''
+
+    while (a != 0 and b != 0):
+        int1 = input("Input a value for a: ")
+        int2 = input("Input a value for b: ")
+
+        a = int(int1)
+        b = int(int2)
+        total = 0
+        total = a + b
+        
+        print(f"{a} + {b} = {total}")
+        return main()
+
+def subtract():
+    a = ''
+    b = ''
+
+    while (a != 0 and b != 0):
+        int1 = input("Input a value for a: ")
+        int2 = input("Input a value for b: ")
+
+        a = int(int1)
+        b = int(int2)
+        total = 0
+        total = a - b
+        
+        print(f"{a} - {b} = {total}")
+        return main()
+
+def multiply():
+    a = ''
+    b = ''
+
+    while (a != 0 and b != 0):
+        int1 = input("Input a value for a: ")
+        int2 = input("Input a value for b: ")
+
+        a = int(int1)
+        b = int(int2)
+        total = 0
+        total = a * b
+        
+        print(f"{a} * {b} = {total}")
+        return main()
+
+def divide():
+    a = ''
+    b = ''
+
+    while (a != 0 and b != 0):
+        int1 = input("Input a value for a: ")
+        int2 = input("Input a value for b: ")
+
+        a = int(int1)
+        b = int(int2)
+        total = 0
+        total = a / b
+        
+        print(f"{a} / {b} = {total}")
+        return main() 
+
+def length():
+    n = ''
+    while (n != 0):
+        int1 = input("Input a value for n: ")
+        n = len(int1)
+        print(f"The number of digits in {int1} is {n}")
+        return main()
+
+
 #main function
 def main():
-    func = input("Would you like to find the factorial (1) or exponential (2) of a number or close the program (3): ")
+    print("Hello what would you like to compute today?")
+    func = input("factorial (1), exponential (2), greater than (3), addition (4), subtraction (5), multiplication (6), division (7), length of interger (8), close program (9): ")
     x = int(func)
     if (x == 1):
         return fact()
     if (x == 2):
         return expo()
     if (x == 3):
-        return 0
+        return greaterThan()
+    if (x == 4):
+        return add()
+    if (x == 5):
+        return subtract()
+    if (x == 6):
+        return multiply()
+    if (x == 7):
+        return divide()
+    if (x == 8):
+        return length()
+    if (x == 9):
+        return 0        
+            
 
 #calling main
 if __name__ == "__main__":
