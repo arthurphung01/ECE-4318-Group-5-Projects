@@ -1,1 +1,63 @@
+This is question 6 and 7 done. Output is the first picture under the note posted in question 6 in the Report.
+This code references G7ECE4318Report4 document that was posted as references for this report.
+Site references include: https://ithoughthecamewithyou.com/post/sending-email-via-gmail-in-cnet-using-smtpclient
 
+IMPORTANT NOTE: Grade the other Question 6 and 7 that has been created and submitted by my other group members. This is just to show the professor that I have somewhat contributed 
+to this report, even though I made the mistake of doing the same question as my other group members
+
+
+using System;
+using System.Net.Mail;
+using System.Net;
+
+namespace Lab_5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // main account email
+            // Email to self
+            var fromAddress = new MailAddress("ece4318groupfive@gmail.com", "testemail");
+            var toAddress = new MailAddress("ece4318groupfive@gmail.com", "testemail");
+            
+            //title of the email
+            const string title = "testing email report 4 ece4318";
+            //text written in the email
+            const string bodyparagraph = "this is the real email";
+            //password to the email that is above in order to access the gmail account created above
+            // I had to put a 2-step verification and had to create an app password for Windows Computer, so that the document can be fully accessed through Smtp.
+            const string password = "bljg bcpe sjcm jgrb";
+            //cc to the two email addresses written
+            var cc = new MailAddress("alexdarwish11@gmail.com", "Alex Darwish");
+            var cc2 = new MailAddress("johnbrotherr9@gmail.com", "John");
+            //bcc to the email address written
+            var bcc = new MailAddress("oceanatic12@gmail.com", "Ocean");
+
+            //Reference used here https://ithoughthecamewithyou.com/post/sending-email-via-gmail-in-cnet-using-smtpclient
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress.Address, password)
+
+            };
+
+            using (var message = new MailMessage(fromAddress, toAddress)
+            {
+                Subject = title,
+                Body = bodyparagraph
+            })
+            {
+                message.CC.Add(cc);
+                message.CC.Add(cc2);
+                message.Bcc.Add(bcc);
+                smtp.Send(message);
+
+            }
+        }
+    }
+}
